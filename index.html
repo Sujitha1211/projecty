@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log HCP Interaction</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+.page-header,body{align-items:center}.app,body{overflow:hidden;display:flex}.app,.page-header,.page-icon,.row,body{display:flex}.ac-wrap,.app{position:relative}.ac-item,.chip button,.sent-btn,select{cursor:pointer}.ai-panel::after,.ai-panel::before,body::after,body::before{content:'';pointer-events:none}*{box-sizing:border-box;margin:0;padding:0}:root{--accent:#6366f1;--accent2:#8b5cf6;--accent3:#a78bfa;--accent-l:rgba(99,102,241,.08);--accent-xl:rgba(99,102,241,.15);--green:#10b981;--red:#ef4444;--amber:#f59e0b;--r:18px;--r-sm:12px;--r-pill:100px}body{font-family:Inter,system-ui,sans-serif;min-height:100vh;background:linear-gradient(135deg,#667eea 0,#764ba2 100%);color:#1e293b;-webkit-font-smoothing:antialiased;justify-content:center}.ac-list.open,label{display:block}::selection{background:var(--accent);color:#fff}body::after,body::before{position:fixed;border-radius:50%;filter:blur(80px);opacity:.35;z-index:0;animation:18s ease-in-out infinite alternate drift}body::before{width:600px;height:600px;background:#a78bfa;top:-150px;left:-100px}body::after{width:500px;height:500px;background:#f472b6;bottom:-120px;right:-80px;animation-delay:-8s;animation-direction:alternate-reverse}@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,30px) scale(1.08)}100%{transform:translate(-20px,-15px) scale(.95)}}.app{z-index:1;width:calc(100% - 48px);height:calc(100vh - 48px);max-width:1500px;border-radius:24px;background:rgba(255,255,255,.12);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.2);box-shadow:0 25px 60px rgba(0,0,0,.25),0 0 0 1px rgba(255,255,255,.08) inset;min-height:0}.form-panel{flex:1.6;overflow-y:auto;padding:32px 36px 50px;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);min-height:0}.bub.asst,.bub.ok,.section{backdrop-filter:blur(6px)}.form-panel::-webkit-scrollbar{width:5px}.form-panel::-webkit-scrollbar-thumb{background:rgba(99,102,241,.2);border-radius:3px}.page-header{gap:14px;margin-bottom:28px}.page-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:14px;align-items:center;justify-content:center;font-size:22px;color:#fff;box-shadow:0 8px 24px rgba(99,102,241,.4),0 0 0 1px rgba(255,255,255,.2) inset;flex-shrink:0}.page-title{font-size:25px;font-weight:800;letter-spacing:-.5px;background:linear-gradient(135deg,#1e293b,#475569);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.page-sub,label{font-size:12.5px}.ai-badge,.section-title{align-items:center;font-weight:700}.page-sub{color:#64748b;margin-top:1px}.section{background:rgba(255,255,255,.7);border-radius:var(--r);padding:22px 24px;margin-bottom:16px;border:1px solid rgba(255,255,255,.6);box-shadow:0 2px 8px rgba(0,0,0,.04),0 0 0 1px rgba(0,0,0,.02);transition:.25s}.section:hover{box-shadow:0 8px 24px rgba(0,0,0,.06);transform:translateY(-1px)}.section-title{font-size:11.5px;text-transform:uppercase;letter-spacing:.7px;color:#64748b;margin-bottom:16px;display:flex;gap:6px}.chip-row input,.field,.fu-row input{flex:1}.row{gap:16px}.field{margin-bottom:14px}.field:last-child{margin-bottom:0}label{font-weight:600;margin-bottom:6px;color:#334155}.ai-badge{display:inline-flex;gap:3px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:9.5px;padding:2px 8px;border-radius:var(--r-pill);margin-left:6px;opacity:0;transform:scale(.7);transition:.35s cubic-bezier(.34,1.56,.64,1);vertical-align:middle;letter-spacing:.3px}.add-link,.chip,.sent-btn{font-weight:600}.ai-badge.on{opacity:1;transform:scale(1)}.chip:hover,.sent-btn.sel,.sent-btn:hover{transform:translateY(-1px)}input[type=date],input[type=text],input[type=time],select,textarea{width:100%;padding:10px 14px;font-size:13.5px;font-family:inherit;border:1.5px solid rgba(0,0,0,.08);border-radius:var(--r-sm);background:rgba(255,255,255,.8);color:#1e293b;transition:.2s}textarea{resize:vertical;min-height:68px}select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%2394a3b8'%3E%3Cpath d='M5 7L0 2h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:30px}input::placeholder,textarea::placeholder{color:#94a3b8}input:focus,select:focus,textarea:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 4px rgba(99,102,241,.1);background:#fff}.field.flash input,.field.flash select,.field.flash textarea{animation:.6s aiGlow}@keyframes aiGlow{0%{box-shadow:0 0 0 4px rgba(99,102,241,.2);background:rgba(99,102,241,.05)}100%{box-shadow:none;background:rgba(255,255,255,.8)}}.ac-list{position:absolute;top:calc(100% + 6px);left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border:1px solid rgba(0,0,0,.06);border-radius:var(--r-sm);box-shadow:0 12px 40px rgba(0,0,0,.12);max-height:200px;overflow-y:auto;z-index:50;display:none}.fu-del,.sent-btn{background:rgba(255,255,255,.7)}.ac-item{padding:10px 14px;font-size:13px;display:flex;align-items:center;gap:8px;transition:.12s}.ac-item.active,.ac-item:hover{background:var(--accent-l);color:var(--accent)}.ac-item .meta{font-size:11px;color:#94a3b8;margin-left:auto;white-space:nowrap}.chips{display:flex;flex-wrap:wrap;gap:6px;min-height:30px;align-items:center}.ai-panel,.chat{min-height:0;position:relative}.chip{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:var(--r-pill);font-size:12px;letter-spacing:.1px;animation:.25s cubic-bezier(.34,1.56,.64,1) chipPop;transition:transform .12s,box-shadow .12s}.chip:hover{box-shadow:0 4px 12px rgba(0,0,0,.1)}@keyframes chipPop{from{opacity:0;transform:scale(.5) translateY(4px)}to{opacity:1;transform:scale(1) translateY(0)}}.chip.att{background:linear-gradient(135deg,#ede9fe,#ddd6fe);color:#6d28d9;border:1px solid rgba(109,40,217,.12)}.chip.mat{background:linear-gradient(135deg,#dbeafe,#bfdbfe);color:#1d4ed8;border:1px solid rgba(29,78,216,.12)}.chip.smp{background:linear-gradient(135deg,#d1fae5,#a7f3d0);color:#047857;border:1px solid rgba(4,120,87,.12)}.chip button{border:none;background:0 0;font-size:14px;opacity:.4;transition:opacity .12s}.chip button:hover,.send:hover::after{opacity:1}.chip-empty{color:#94a3b8;font-size:12.5px;font-style:italic}.chip-row{display:flex;gap:8px;margin-top:8px}.sent-row{display:flex;gap:10px}.sent-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:12px;border-radius:var(--r-sm);border:1.5px solid rgba(0,0,0,.06);font-size:13.5px;transition:.25s}.fu-del,.fu-row{display:flex;align-items:center}.add-link,.fu-del{transition:.15s;cursor:pointer}.sent-btn:hover{background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.06)}.sent-btn.positive.sel{border-color:var(--green);background:linear-gradient(135deg,#ecfdf5,#d1fae5);color:#065f46;box-shadow:0 4px 16px rgba(16,185,129,.15)}.sent-btn.neutral.sel{border-color:var(--amber);background:linear-gradient(135deg,#fffbeb,#fef3c7);color:#92400e;box-shadow:0 4px 16px rgba(245,158,11,.15)}.sent-btn.negative.sel{border-color:var(--red);background:linear-gradient(135deg,#fef2f2,#fecaca);color:#991b1b;box-shadow:0 4px 16px rgba(239,68,68,.15)}.fu-row{gap:8px;margin-bottom:8px}.fu-del{width:32px;height:32px;border-radius:10px;border:1.5px solid rgba(0,0,0,.06);justify-content:center;font-size:14px;color:#94a3b8;flex-shrink:0}.add-link,.bub,.send,.toast{font-size:13px}.fu-del:hover{background:#fef2f2;color:var(--red);border-color:rgba(239,68,68,.2);transform:scale(1.05)}.add-link{color:var(--accent);background:0 0;border:none;padding:6px 0;display:inline-flex;align-items:center;gap:5px}.ai-head .t,.ai-panel,.bub .tags,.chat{display:flex}.add-link:hover{color:var(--accent2);transform:translateX(2px)}.ai-panel{flex:1;max-width:440px;min-width:0;background:linear-gradient(160deg,#312e81 0,#1e1b4b 40%,#0f172a 100%);flex-direction:column;height:100%;overflow:hidden}.ai-panel::before{position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(139,92,246,.3),transparent 70%);top:-80px;right:-60px}.ai-panel::after{position:absolute;width:250px;height:250px;background:radial-gradient(circle,rgba(99,102,241,.2),transparent 70%);bottom:-50px;left:-40px}.ai-head{padding:24px 24px 18px;position:relative;z-index:1;border-bottom:1px solid rgba(255,255,255,.08)}.ai-head .t{font-size:17px;font-weight:700;color:#fff;align-items:center;gap:8px}.ai-head .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px rgba(16,185,129,.6);animation:2s infinite pulse}@keyframes pulse{0%,100%{box-shadow:0 0 10px rgba(16,185,129,.4)}50%{box-shadow:0 0 20px rgba(16,185,129,.7)}}.ai-head .sub{font-size:12px;color:rgba(255,255,255,.5);margin-top:3px}.ai-head .hint{font-size:11.5px;color:rgba(255,255,255,.45);margin-top:10px;background:rgba(255,255,255,.06);border-radius:var(--r-sm);padding:9px 12px;line-height:1.5;border:1px solid rgba(255,255,255,.06)}.ai-head .hint code{background:rgba(139,92,246,.3);padding:2px 6px;border-radius:4px;font-size:11px;color:#c4b5fd}.chat{flex:1 1 0;overflow-y:auto;padding:18px 22px;flex-direction:column;gap:10px;z-index:1;justify-content:flex-end}.chat::-webkit-scrollbar{width:4px}.chat::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}.bub{max-width:92%;padding:12px 16px;border-radius:var(--r);line-height:1.6;animation:.25s bubSlide}@keyframes bubSlide{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}.bub.asst{background:rgba(255,255,255,.08);color:rgba(255,255,255,.85);align-self:flex-start;border-bottom-left-radius:4px;border:1px solid rgba(255,255,255,.06)}.bub.user{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;align-self:flex-end;border-bottom-right-radius:4px;box-shadow:0 4px 16px rgba(99,102,241,.3)}.bub.ok{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);color:#6ee7b7}.bub.ok strong{display:block;margin-bottom:3px;color:#a7f3d0}.bub .tags{flex-wrap:wrap;gap:4px;margin-top:6px}.bub .tag{padding:2px 8px;border-radius:var(--r-pill);font-size:10.5px;font-weight:600;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.08)}.dots{display:inline-flex;gap:5px;padding:4px 0}.chat-bar,.toast{display:flex;gap:10px}.dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);animation:.7s infinite dotBounce}.dots span:nth-child(2){animation-delay:.12s}.dots span:nth-child(3){animation-delay:.24s}@keyframes dotBounce{0%,100%,60%{transform:translateY(0);opacity:.3}30%{transform:translateY(-5px);opacity:1}}.chat-bar{flex-shrink:0;padding:14px 22px 20px;position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.06);align-items:flex-end;background:rgba(0,0,0,.15)}.chat-bar textarea{flex:1;min-height:42px;max-height:100px;resize:none;font-family:inherit;font-size:13px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.1);border-radius:var(--r-sm);color:#fff;padding:10px 14px}.chat-bar textarea::placeholder{color:rgba(255,255,255,.3)}.chat-bar textarea:focus{outline:0;border-color:rgba(139,92,246,.5);box-shadow:0 0 0 3px rgba(139,92,246,.15);background:rgba(255,255,255,.1)}.send{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:var(--r-sm);padding:11px 22px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(99,102,241,.4);transition:.2s;position:relative;overflow:hidden}.fab,.toast{position:fixed;color:#fff}.send::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.2),transparent);opacity:0;transition:opacity .2s}.send:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(99,102,241,.5)}.send:active{transform:translateY(0)}.send:disabled{opacity:.35;cursor:not-allowed;transform:none;box-shadow:none}.toast{bottom:36px;left:50%;transform:translateX(-50%) translateY(80px);background:linear-gradient(135deg,#1e293b,#0f172a);padding:14px 28px;border-radius:var(--r);font-weight:500;box-shadow:0 12px 40px rgba(0,0,0,.3);align-items:center;z-index:999;opacity:0;transition:.4s cubic-bezier(.16,1,.3,1);pointer-events:none;border:1px solid rgba(255,255,255,.08)}.toast.on{transform:translateX(-50%) translateY(0);opacity:1}.fab{display:none;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;font-size:22px;box-shadow:0 8px 24px rgba(99,102,241,.5);cursor:pointer;z-index:200;transition:.2s}.fab:hover{transform:scale(1.1);box-shadow:0 12px 32px rgba(99,102,241,.6)}@media(max-width:1024px){body{overflow:auto}.app{flex-direction:column;height:auto;width:100%;min-height:100vh;border-radius:0}.form-panel{padding:20px 16px 100px;flex:none;background:rgba(255,255,255,.9)}.ai-panel{max-width:100%;height:65vh;position:fixed;bottom:0;left:0;right:0;z-index:100;transform:translateY(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);border-radius:24px 24px 0 0}.ai-panel.open{transform:translateY(0)}.fab{display:flex;align-items:center;justify-content:center}.row{flex-direction:column;gap:0}}
+</style>
+</head>
+<body>
+
+<div class="app">
+<div class="form-panel">
+  <div class="page-header">
+    <div class="page-icon">📋</div>
+    <div><div class="page-title">Log HCP Interaction</div><div class="page-sub">Record and track your healthcare professional engagements</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📌 Interaction Details</div>
+    <div class="row">
+      <div class="field ac-wrap" id="fHcp">
+        <label>HCP Name <span class="ai-badge" id="bHcp">AI</span></label>
+        <input type="text" id="hcpName" placeholder="Search or type HCP name..." autocomplete="off">
+        <div class="ac-list" id="hcpAC"></div>
+      </div>
+      <div class="field" id="fType">
+        <label>Interaction Type <span class="ai-badge" id="bType">AI</span></label>
+        <select id="interactionType"><option value="">Select type...</option><option>Meeting</option><option>Call</option><option>Email</option><option>Conference</option><option>Virtual</option></select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field" id="fDate"><label>Date <span class="ai-badge" id="bDate">AI</span></label><input type="date" id="interactionDate"></div>
+      <div class="field" id="fTime"><label>Time <span class="ai-badge" id="bTime">AI</span></label><input type="time" id="interactionTime"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">👥 Attendees <span class="ai-badge" id="bAtt">AI</span></div>
+    <div class="chips" id="attChips"></div>
+    <div class="chip-row"><input type="text" id="attIn" placeholder="Type name, press Enter..."></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">💬 Topics Discussed <span class="ai-badge" id="bTop">AI</span></div>
+    <textarea id="topics" placeholder="Key discussion points, clinical data, product benefits..." rows="3"></textarea>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📦 Materials & Samples</div>
+    <div style="font-size:12.5px;font-weight:600;margin-bottom:6px;color:#334155">Materials Shared <span class="ai-badge" id="bMat">AI</span></div>
+    <div class="chips" id="matChips"><span class="chip-empty">No materials yet.</span></div>
+    <div class="chip-row"><input type="text" id="matIn" placeholder="Type material, press Enter..."></div>
+    <div style="font-size:12.5px;font-weight:600;margin:16px 0 6px;color:#334155">Samples Distributed <span class="ai-badge" id="bSmp">AI</span></div>
+    <div class="chips" id="smpChips"><span class="chip-empty">No samples yet.</span></div>
+    <div class="chip-row"><input type="text" id="smpIn" placeholder="Type sample, press Enter..."></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🎯 HCP Sentiment <span class="ai-badge" id="bSen">AI</span></div>
+    <div class="sent-row">
+      <button type="button" class="sent-btn positive" data-v="Positive" onclick="pickSent(this)">🙂 Positive</button>
+      <button type="button" class="sent-btn neutral" data-v="Neutral" onclick="pickSent(this)">😐 Neutral</button>
+      <button type="button" class="sent-btn negative" data-v="Negative" onclick="pickSent(this)">🙁 Negative</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🎯 Outcomes <span class="ai-badge" id="bOut">AI</span></div>
+    <textarea id="outcomes" placeholder="Key outcomes, agreements, decisions..." rows="2"></textarea>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📅 Follow-up Actions <span class="ai-badge" id="bFup">AI</span></div>
+    <div id="fuList"></div>
+    <button class="add-link" onclick="addFU()">＋ Add follow-up</button>
+  </div>
+</div>
+
+<div class="ai-panel" id="aiPanel">
+  <div class="ai-head">
+    <div class="t"><span class="dot"></span> AI Assistant</div>
+    <div class="sub">Describe your interaction — I'll auto-fill the form</div>
+    <div class="hint">Try: <code>Met Dr. Suji, discussed Prodo-X efficacy, positive, shared brochure</code></div>
+  </div>
+  <div class="chat" id="chat">
+    <div class="bub asst">Hi! Describe your HCP interaction and I'll auto-fill the form. Example: <em>"Met Dr. Suji today at 3pm, discussed cardiac trial results, shared clinical data, positive sentiment, schedule follow-up"</em></div>
+  </div>
+  <div class="chat-bar">
+    <textarea id="chatIn" placeholder="e.g. Met Dr. Suji, discussed new drug data, positive..." rows="1"></textarea>
+    <button class="send" id="sendBtn" onclick="handleSend()">Send</button>
+  </div>
+</div>
+</div>
+
+<button class="fab" id="fab" onclick="toggleChat()">💬</button>
+<div class="toast" id="toast"><span>✅</span><span id="toastMsg"></span></div>
+
+<script>
+let fus=[],sentiment=null;
+
+const HCPS=[
+  {n:"Dr. Suji",s:"General Medicine",h:"City Hospital"},
+  {n:"Dr. Rajesh Kumar",s:"Cardiology",h:"Apollo Hospital"},
+  {n:"Dr. Priya Sharma",s:"Oncology",h:"Fortis Healthcare"},
+  {n:"Dr. Amit Patel",s:"Neurology",h:"Max Hospital"},
+  {n:"Dr. Sneha Reddy",s:"Endocrinology",h:"Manipal Hospital"},
+  {n:"Dr. Vikram Singh",s:"Pulmonology",h:"AIIMS Delhi"},
+  {n:"Dr. Ananya Gupta",s:"Dermatology",h:"CMC Vellore"},
+  {n:"Dr. Suresh Nair",s:"Gastroenterology",h:"KIMS Hospital"},
+  {n:"Dr. Meera Iyer",s:"Pediatrics",h:"Narayana Health"},
+  {n:"Dr. Arjun Mehta",s:"Orthopedics",h:"Hinduja Hospital"},
+];
+
+const $=id=>document.getElementById(id);
+const esc=s=>(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+function badge(id){const b=$(id);if(b){b.classList.add('on');setTimeout(()=>b.classList.remove('on'),3000)}}
+function flash(id){const f=$(id);if(f){f.classList.add('flash');setTimeout(()=>f.classList.remove('flash'),600)}}
+function toast(msg){const t=$('toast');$('toastMsg').textContent=msg;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),3000)}
+function toggleChat(){$('aiPanel').classList.toggle('open');$('fab').textContent=$('aiPanel').classList.contains('open')?'✕':'💬'}
+
+function addChip(cid,text,type){
+  const c=$(cid),e=c.querySelector('.chip-empty');if(e)e.remove();
+  const ch=document.createElement('span');ch.className='chip '+type;
+  ch.innerHTML=`${esc(text)} <button onclick="this.parentElement.remove();checkEmpty('${cid}','${type}')">✕</button>`;
+  c.appendChild(ch);
+}
+function checkEmpty(cid,type){
+  const c=$(cid);if(!c.children.length){
+    const e=document.createElement('span');e.className='chip-empty';
+    e.textContent=type==='att'?'No attendees yet.':type==='mat'?'No materials yet.':'No samples yet.';
+    c.appendChild(e);
+  }
+}
+['attIn','matChips','att','matIn','matChips','mat','smpIn','smpChips','smp'].reduce((a,v,i)=>{
+  if(i%3===0)a.push([v]);else a[a.length-1].push(v);return a;
+},[]).forEach(([iid,cid,type])=>{
+  $(iid).addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.value.trim()){e.preventDefault();addChip(cid,e.target.value.trim(),type);e.target.value=''}});
+});
+
+function pickSent(btn){document.querySelectorAll('.sent-btn').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');sentiment=btn.dataset.v}
+
+function addFU(text=''){const id=Date.now()+Math.random();fus.push({id,text});renderFU()}
+function renderFU(){
+  const el=$('fuList');el.innerHTML='';
+  fus.forEach(f=>{
+    const r=document.createElement('div');r.className='fu-row';
+    r.innerHTML=`<input type="text" value="${esc(f.text)}" placeholder="e.g. Schedule follow-up in 3 months"><button class="fu-del" onclick="fus=fus.filter(x=>x.id!==${f.id});renderFU()">✕</button>`;
+    r.querySelector('input').addEventListener('input',e=>f.text=e.target.value);el.appendChild(r);
+  });
+  if(!fus.length)el.innerHTML='<div style="color:#94a3b8;font-size:12.5px">No follow-up actions yet.</div>';
+}
+renderFU();
+
+let acIdx=-1;
+const hcpIn=$('hcpName'),acL=$('hcpAC');
+hcpIn.addEventListener('input',()=>{
+  const v=hcpIn.value.toLowerCase().trim();acL.innerHTML='';acIdx=-1;
+  if(v.length<1){acL.classList.remove('open');return}
+  const m=HCPS.filter(h=>h.n.toLowerCase().includes(v)||h.s.toLowerCase().includes(v));
+  if(!m.length){acL.classList.remove('open');return}
+  m.forEach(h=>{
+    const d=document.createElement('div');d.className='ac-item';
+    d.innerHTML=`<span>${esc(h.n)}</span><span class="meta">${esc(h.s)} · ${esc(h.h)}</span>`;
+    d.onclick=()=>{hcpIn.value=h.n;acL.classList.remove('open')};acL.appendChild(d);
+  });
+  acL.classList.add('open');
+});
+hcpIn.addEventListener('keydown',e=>{
+  const its=acL.querySelectorAll('.ac-item');if(!its.length)return;
+  if(e.key==='ArrowDown'){e.preventDefault();acIdx=Math.min(acIdx+1,its.length-1);its.forEach((t,i)=>t.classList.toggle('active',i===acIdx))}
+  else if(e.key==='ArrowUp'){e.preventDefault();acIdx=Math.max(acIdx-1,0);its.forEach((t,i)=>t.classList.toggle('active',i===acIdx))}
+  else if(e.key==='Enter'&&acIdx>=0){e.preventDefault();its[acIdx].click()}
+  else if(e.key==='Escape')acL.classList.remove('open');
+});
+document.addEventListener('click',e=>{if(!e.target.closest('.ac-wrap'))acL.classList.remove('open')});
+
+function parse(text){
+  const lo=text.toLowerCase();
+  const r={hcp_name:null,interaction_type:null,date:null,time:null,attendees:[],topics_discussed:null,materials_shared:[],samples_distributed:[],sentiment:null,outcomes:null,follow_up_actions:[]};
+
+  for(const p of[/met\s+(dr\.?\s+[a-zA-Z][a-zA-Z\s.]+?)(?:\s*,|\s+and|\s+on|\s+at|\s+to|\s+about|\s+who|\s+discussed|\s+talked|$)/i,/(?:dr\.?\s+[a-zA-Z][a-zA-Z\s.]+?)(?:\s*,|\s+and|\s+on|\s+at|\s+about|\s+discussed|$)/i]){
+    const m=text.match(p);if(m){let n=(m[1]||m[0]).trim().replace(/[,.]$/,'');if(n.length>2&&n.length<60){if(!n.toLowerCase().startsWith('dr'))n='Dr. '+n;r.hcp_name=n;break}}
+  }
+
+  const tm={'meeting':'Meeting','met':'Meeting','face to face':'Meeting','call':'Call','phone':'Call','email':'Email','conference':'Conference','symposium':'Conference','virtual':'Virtual','zoom':'Virtual','teams':'Virtual','webinar':'Virtual'};
+  for(const[k,v]of Object.entries(tm)){if(lo.includes(k)){r.interaction_type=v;break}}
+
+  const now=new Date();
+  if(lo.includes('today'))r.date=now.toISOString().slice(0,10);
+  else if(lo.includes('yesterday')){const d=new Date(now);d.setDate(d.getDate()-1);r.date=d.toISOString().slice(0,10)}
+  else{['sunday','monday','tuesday','wednesday','thursday','friday','saturday'].forEach((dn,i)=>{if(!r.date&&lo.includes(dn)){const d=new Date(now);d.setDate(d.getDate()-((d.getDay()-i+7)%7||7));r.date=d.toISOString().slice(0,10)}});
+    if(!r.date){const dm=text.match(/(?:on\s+)?(\w+\s+\d{1,2}(?:,?\s*\d{4})?)/);if(dm){const p=new Date(dm[1]);if(!isNaN(p.getTime()))r.date=p.toISOString().slice(0,10)}}
+  }
+
+  const tm2=text.match(/(?:at\s+)?(\d{1,2})(?::(\d{2}))?\s*(am|pm)\b/i);
+  if(tm2){let h=parseInt(tm2[1]);const m=tm2[2]||'00';if(tm2[3]?.toLowerCase()==='pm'&&h<12)h+=12;if(tm2[3]?.toLowerCase()==='am'&&h===12)h=0;r.time=String(h).padStart(2,'0')+':'+m}
+  else{const tm3=text.match(/(?:at\s+)?(\d{1,2})\s*(am|pm)\b/i);if(tm3){let h=parseInt(tm3[1]);if(tm3[2]?.toLowerCase()==='pm'&&h<12)h+=12;if(tm3[2]?.toLowerCase()==='am'&&h===12)h=0;r.time=String(h).padStart(2,'0')+':00'}}
+
+  const pos=['great','positive','enthusiastic','interested','excited','optimistic','receptive','happy','pleased','impressed','favorable','excellent','amazing'];
+  const neg=['negative','concerned','hesitant','reluctant','unimpressed','skeptical','worried','frustrated','disappointed','terrible'];
+  const pc=pos.filter(w=>lo.includes(w)).length,nc=neg.filter(w=>lo.includes(w)).length;
+  if(pc>nc)r.sentiment='Positive';else if(nc>pc)r.sentiment='Negative';else if(lo.includes('neutral'))r.sentiment='Neutral';
+  const sm=text.match(/sentiment\s*(?:was|is|:)?\s*(positive|negative|neutral)/i);if(sm)r.sentiment=sm[1].charAt(0).toUpperCase()+sm[1].slice(1);
+
+  const tps=[];[...text.matchAll(/(?:discussed|talked about|covered|reviewed|presented|explained|highlighted)\s+(.+?)(?:\.|,|$)/gi)].forEach(m=>tps.push(m[1].trim().replace(/[,.]$/,'')));
+  if(tps.length)r.topics_discussed=tps.join('; ');
+
+  const mats=new Set();
+  [...text.matchAll(/(?:shared|handed|gave|distributed|provided)\s+(.+?(?:brochure|leaflet|paper|report|data|deck|chart|guide|folder))/gi)].forEach(m=>mats.add(m[1].trim().replace(/[,.]$/,'')));
+  ['brochure','leaflet','pamphlet','folder','clinical data','research paper','dosage guide','safety data'].forEach(kw=>{if(lo.includes(kw)){const c=text.match(new RegExp(`.{0,20}${kw}`,'i'));mats.add(c?c[0].trim():kw)}});
+  r.materials_shared=[...mats].filter(m=>m.length>2&&m.length<80);
+
+  const smps=new Set();
+  [...text.matchAll(/(?:sample|trial pack|starter pack|demo pack)(?:\s*(?:of|for))?\s*(.+?)(?:,|\.|$)/gi)].forEach(m=>{const v=m[1].trim().replace(/[,.]$/,'');if(v.length>1&&v.length<60)smps.add(v)});
+  if(lo.includes('sample')&&!smps.size)smps.add('Sample Pack');
+  r.samples_distributed=[...smps];
+
+  const atts=new Set();
+  [...text.matchAll(/(?:with|along with|and)\s+(?:dr\.?\s+)?([A-Z][a-zA-Z]+(?:\s+(?:and|,)\s*(?:dr\.?\s+)?[A-Z][a-zA-Z]+)*)/g)].forEach(m=>{
+    m[1].split(/\s+and\s+|,\s*/).forEach(n=>{n=n.trim();if(n.length>2&&!/^(the|a|an|this|that|discussed|talked|shared)$/i.test(n)){atts.add(n.match(/^dr/i)?n:'Dr. '+n)}});
+  });
+  r.attendees=[...atts];
+
+  const ocs=[];[...text.matchAll(/(?:agreed to|decided to|committed to|promised to|will|confirmed that)\s+(.+?)(?:\.|,|$)/gi)].forEach(m=>ocs.push(m[1].trim().replace(/[,.]$/,'')));
+  if(ocs.length)r.outcomes=ocs.join('; ');
+
+  const fups=new Set();
+  [...text.matchAll(/(?:follow[- ]?up)\s*(?:to\s+)?(.+?)(?:\.|,|$)/gi)].forEach(m=>{const v=m[1].trim().replace(/[,.]$/,'');if(v.length>2&&v.length<100)fups.add(v)});
+  [...text.matchAll(/(?:schedule|send|arrange|set up|remind|plan)\s+(?:to\s+)?(.+?)(?:\.|,|$)/gi)].forEach(m=>{const v=m[1].trim().replace(/[,.]$/,'');if(v.length>2&&v.length<100)fups.add(v)});
+  [...text.matchAll(/(?:need to|must|should|have to)\s+(.+?)(?:\.|,|$)/gi)].forEach(m=>{const v=m[1].trim().replace(/[,.]$/,'');if(v.length>2&&v.length<100)fups.add(v)});
+  r.follow_up_actions=[...fups];
+
+  return r;
+}
+
+function apply(d){
+  const set=(id,v)=>{if(v)$(id).value=v};
+  if(d.hcp_name){set('hcpName',d.hcp_name);badge('bHcp');flash('fHcp')}
+  if(d.interaction_type){const o=[...$('interactionType').options].find(o=>o.text.toLowerCase()===d.interaction_type.toLowerCase());if(o)$('interactionType').value=o.value||o.text;badge('bType');flash('fType')}
+  if(d.date){set('interactionDate',d.date);badge('bDate');flash('fDate')}else if(!$('interactionDate').value)$('interactionDate').value=new Date().toISOString().slice(0,10);
+  if(d.time){set('interactionTime',d.time);badge('bTime');flash('fTime')}else if(!$('interactionTime').value){const n=new Date();$('interactionTime').value=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0')}
+  if(d.attendees?.length){d.attendees.forEach(a=>a&&addChip('attChips',a,'att'));badge('bAtt')}
+  if(d.topics_discussed){const t=$('topics');t.value=t.value?t.value+'\n'+d.topics_discussed:d.topics_discussed;badge('bTop');flash('topics')}
+  if(d.materials_shared?.length){d.materials_shared.forEach(m=>addChip('matChips',m,'mat'));badge('bMat')}
+  if(d.samples_distributed?.length){d.samples_distributed.forEach(s=>addChip('smpChips',s,'smp'));badge('bSmp')}
+  if(d.sentiment){document.querySelectorAll('.sent-btn').forEach(b=>b.classList.toggle('sel',b.dataset.v===d.sentiment));sentiment=d.sentiment;badge('bSen')}
+  if(d.outcomes){const o=$('outcomes');o.value=o.value?o.value+'\n'+d.outcomes:d.outcomes;badge('bOut');flash('outcomes')}
+  if(d.follow_up_actions?.length){d.follow_up_actions.forEach(f=>addFU(f));badge('bFup')}
+}
+
+function bubble(text,cls){
+  const b=document.createElement('div');b.className='bub '+cls;b.innerHTML=text;
+  $('chat').appendChild(b);$('chat').scrollTop=$('chat').scrollHeight;return b;
+}
+
+async function handleSend(){
+  const inp=$('chatIn'),text=inp.value.trim();if(!text)return;
+  bubble(esc(text),'user');inp.value='';inp.style.height='auto';$('sendBtn').disabled=true;
+
+  const think=document.createElement('div');think.className='bub asst';think.innerHTML='<div class="dots"><span></span><span></span><span></span></div>';
+  $('chat').appendChild(think);$('chat').scrollTop=$('chat').scrollHeight;
+
+  await new Promise(r=>setTimeout(r,500+Math.random()*500));
+  try{
+    const d=parse(text);think.remove();apply(d);
+    const filled=['HCP Name','Type','Date','Time','Attendees','Topics','Materials','Samples','Sentiment','Outcomes','Follow-ups'].filter((_,i)=>[d.hcp_name,d.interaction_type,d.date,d.time,d.attendees?.length,d.topics_discussed,d.materials_shared?.length,d.samples_distributed?.length,d.sentiment,d.outcomes,d.follow_up_actions?.length][i]);
+    if(filled.length){
+      bubble(`<strong>✅ Interaction logged!</strong> Auto-filled ${filled.length} field${filled.length>1?'s':''}.<div class="tags">${filled.map(f=>`<span class="tag">${f}</span>`).join('')}</div>`,'ok');
+      toast(`${filled.length} field${filled.length>1?'s':''} auto-filled`);
+    } else {
+      bubble("Couldn't detect specific data. Try: <em>\"Met Dr. Suji, discussed drug efficacy, positive, shared brochure, follow-up next week\"</em>",'asst');
+    }
+  }catch(e){think.remove();bubble("Something went wrong. Try rephrasing or fill fields directly.",'asst')}
+  finally{$('sendBtn').disabled=false;inp.focus()}
+}
+
+$('chatIn').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();handleSend()}});
+$('chatIn').addEventListener('input',function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,100)+'px'});
+
+(()=>{const n=new Date();$('interactionDate').value=n.toISOString().slice(0,10);$('interactionTime').value=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0')})();
+</script>
+</body>
+</html>
