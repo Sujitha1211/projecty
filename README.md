@@ -52,13 +52,10 @@ The extracted data is returned as a JavaScript object (JSON-like structure).
 The apply() function automatically fills the corresponding form fields, highlights updated fields, and displays a confirmation message.
 ## Screenshots
 
-![1](https://github.com/user-attachments/assets/9d1bbffe-987e-4438-a8df-6b6140d631b9)
 
-![2](https://github.com/user-attachments/assets/4ebab0e5-a5d3-44d7-b332-ef18eddbf02b)
 ![3](https://github.com/user-attachments/assets/4e7e2989-bd7f-4a7e-83e9-bf8346921003)
-
-
-
+![2](https://github.com/user-attachments/assets/4ebab0e5-a5d3-44d7-b332-ef18eddbf02b)
+![1](https://github.com/user-attachments/assets/9d1bbffe-987e-4438-a8df-6b6140d631b9)
 
 ## Demo
 
